@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Basic Todo
+This project is built using Next.js with Prisma as the ORM to interact with the database.
 
-## Getting Started
 
-First, run the development server:
 
-```bash
+Using npm:
+
+bash
+Copy code
+npm install
+Using yarn:
+
+bash
+Copy code
+yarn install
+Set up your environment variables
+Create a .env file in the root of your project and add your database connection string. For example:
+
+makefile
+Copy code
+DATABASE_URL=postgresql://neondb_owner:rqH6QNIDA1om@ep-wild-darkness-a1gm01io.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+Migrate the database (if needed)
+Run the Prisma migration command:
+
+bash
+Copy code
+npx prisma migrate dev
+Running the Project
+To start the development server:
+
+With npm:
+
+bash
+Copy code
 npm run dev
-# or
+With yarn:
+
+bash
+Copy code
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This will start the development server on http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Viewing the Database
+To view and interact with the database using Prisma Studio:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+bash
+Copy code
+npx prisma studio
+This will open an interactive interface for viewing and managing your data.
